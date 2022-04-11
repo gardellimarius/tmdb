@@ -1,6 +1,6 @@
 # Movie App
 
-This app is made using React-Hooks.
+This app is made using react-hooks and react-router-dom.
 
 # Run to app
 
