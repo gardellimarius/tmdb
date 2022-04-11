@@ -1,0 +1,46 @@
+@use '../../Components/Utils/helpers' as *;
+@use '../../Components/Utils/variables' as *;
+
+
+
+@media only screen and (min-width: 500px) and (max-width: 1920px) {
+  .layouts {
+    @include flex(column, center, center);
+    .movie-list-type {
+      .movie-container {
+        @include row;
+        .movie {
+          @include item(300px, 12.5%, 250px, 30px);
+          margin-top: $mobileMargin;
+          .movie-title {
+            margin-top: $mobileMargin;
+          }
+        }
+      }
+    }
+    .movie-list-type:nth-child(2) {
+      margin-top: $mobileMargin * 4;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .layouts {
+    @include flex(column, center, center);
+    .movie-list-type {
+      .movie-container {
+        @include row;
+        .movie {
+          @include item(300px, 10%, 250px, 30px);
+          margin-top: $mobileMargin;
+          .movie-title {
+            margin-top: $mobileMargin;
+          }
+        }
+      }
+    }
+    .movie-list-type:nth-child(2) {
+      margin-top: $mobileMargin * 4;
+    }
+  }
+}

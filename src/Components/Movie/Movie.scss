@@ -1,0 +1,52 @@
+@use '../Utils/variables' as *;
+
+//SCSS for movie-type
+
+.movie-list-type {
+  .movie-type {
+    margin: $mobileMargin  0 $mobileMargin $mobileMargin * 2;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+  }
+}
+.carousel-root {
+  .movie {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 40px;
+    width: $mobileMovieWidth;
+    margin-left: calc((100% - $mobileMovieWidth) / 2);
+    .movie-poster {
+      border-radius: 20px;
+      background-position: center;
+      background-size: cover;
+      height: $mobileMovieHeight;
+      width: 100%;
+    }
+    .movie-title {
+      margin: $mobileMargin 0;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .movie {
+    .movie-poster {
+      height: 100%;
+      border-radius: 20px;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
+
+//
+
+
+//SCSS for movieGenre
+
+
+//

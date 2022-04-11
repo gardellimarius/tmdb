@@ -1,0 +1,126 @@
+@use '../../Components/Utils/helpers' as *;
+@use '../../Components/Utils/variables' as *;
+
+//Global styles
+
+.movie-list-genre {
+  width: calc( 100% - $desktopNavbarWidth );
+}
+
+
+.movie-buttons {
+  @include flex(row, center, center);
+  .button:hover {
+    cursor: pointer;
+  }
+  .button-next {
+    margin-left: 20px;
+  }
+  .button-prev {
+    margin-right: 20px;
+  }
+  .button {
+    margin-top: $mobileMargin;
+    height: 60px;
+    position: relative;
+  }
+  .button:after, .button:before {
+    position: absolute;
+    content: '';
+    height: 50%;
+    width: 2px;
+    background-color: rgba(255, 255, 255, .15)
+  }
+  .button.button-prev:after, .button.button-prev:before {
+    right: 0;
+  }
+  .button.button-prev:after {
+    transform: rotate(45deg);
+  }
+  .button.button-prev:before {
+    transform: rotate(-45deg);
+    top: 35%;
+  }
+  .button.button-next:after, .button.button-next:before {
+    left: 0;
+  }
+  .button.button-next:after {
+    transform: rotate(-45deg);
+  }
+  .button.button-next:before {
+    transform: rotate(45deg);
+    top: 35%;
+  }
+}
+
+//
+
+
+
+@media only screen and (max-device-width: 500px) {
+
+.movie-list-genre {
+  @include flex(column, center, center);
+  width: 100%;
+  .movies-container {
+    .movie {
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 40px;
+      width: $mobileMovieWidth;
+      margin-left: calc((100% - $mobileMovieWidth) / 4);
+      margin-top: $mobileMargin;
+      .movie-title {
+        margin-top: $mobileMargin;
+      }
+      .movie-poster {
+        border-radius: 20px;
+        background-position: center;
+        background-size: cover;
+        height: $mobileMovieHeight;
+        width: 100%;
+      }
+    }
+  }
+}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1920px) {
+  .movie-list-genre {
+    width: calc( 100% - $desktopNavbarWidth );
+    @include flex(column, center, center);
+    .movies-container {
+      @include row;
+      .movie {
+        @include item(350px, 15%, 250px, 30px);
+        margin-top: $mobileMargin;
+        .movie-title {
+          margin-top: $mobileMargin;
+        }
+      }
+    }
+    .movie-buttons {
+      margin-top: $desktopMargin;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .movie-list-genre {
+    width: calc( 100% - $desktopNavbarWidth );
+    @include flex(column, center, center);
+    .movies-container {
+      @include row;
+      .movie {
+        @include item(350px, 10%, 250px, 30px);
+        margin-top: $mobileMargin;
+        .movie-title {
+          margin-top: $mobileMargin;
+        }
+      }
+    }
+    .movie-buttons {
+      margin-top: $desktopMargin;
+    }
+  }
+}

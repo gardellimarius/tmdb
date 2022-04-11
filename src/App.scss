@@ -1,0 +1,68 @@
+@use './Components/Utils/helpers' as *;
+@use './Components/Utils/variables' as *;
+
+html, body {
+  background: #333750;
+}
+
+.App, .layouts {
+  height: auto;
+}
+
+a, h1, h2, h3 {
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.movie-type {
+  font-size: 20px !important;
+}
+
+h2 {
+  font-size: $font * 2.5 !important;
+}
+
+h3 {
+  line-height: 1.8;
+  font-size: $font * 1.5 !important;
+}
+
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: $font * 1.4 !important;
+  }
+  h3 {
+    font-size: $font * 1.2 !important;
+  }
+}
+
+.credit {
+  h3 {
+    line-height: 1 !important;
+  }
+}
+
+@media (min-width: 500px) {
+  .App {
+    display: flex;
+    .navbar-desktop {
+      width: $desktopNavbarWidth;
+      @include flex(column, center, center);
+      .genres {
+        margin-top: $desktopSpaceItems * 1.25;
+        .genre {
+          margin-top: $desktopSpaceItems;
+        }
+      }
+    }
+    .layouts {
+      width: calc(100% - $desktopNavbarWidth);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../Components/Utils/helpers' as *;
+@use '../../Components/Utils/variables' as *;
+
+#root > div > div.movie-details > div.movie-details-content > div.credits > div > div.carousel.carousel-slider > div > ul > li > div > div {
+  height: 400px;
+  border-radius: 20px;
+  width: $mobileCarouselWidth;
+  margin-left: calc((100% - $mobileCarouselWidth)/2);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#root > div > div.movie-details > div.movie-details-content > div.credits > div > div.carousel.carousel-slider > div > ul > li.slide {
+  border-radius: 20px;
+  width: 80%;
+}
