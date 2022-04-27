@@ -1,6 +1,6 @@
 # Movie App
 
-This app is made using react-hooks and react-router-dom.
+This app is made using react-hooks, react-router-dom, react-responsive-carousel and react-responsive .
 
 # Run to app
 
